@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# SEQ=82
+
+. /etc/profile
+
+case "$1" in
+  start)
+    if [ `pidof DMR2YSF` ] ; then
+      exit 0
+    fi
+    CONFIG="/storage/.config/DMR2YSF.ini"
+    if [ -f $CONFIG ] ; then
+      DAEMON=$(grep ^Daemon= $CONFIG | cut -d= -f2)
+      if [ "$DAEMON" == "1" ] ; then
+        sed -e 's/Daemon=.*/Daemon=0/g' -i $CONFIG
+      fi
+      (
+        while : ; do
+          sleep 2
+          DMR2YSF $CONFIG &>/dev/null
+        done
+      ) &
+    fi
+    ;;
+  stop)
+    pkill -TERM -f DMR2YSF
+    sleep 0.2
+    pkill -9 -f 'DMR2YSF|dmr2ysf'
+    ;;
+esac
+
+exit 0

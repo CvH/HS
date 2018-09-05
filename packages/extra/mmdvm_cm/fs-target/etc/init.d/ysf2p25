@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# SEQ=82
+
+. /etc/profile
+
+case "$1" in
+  start)
+    if [ `pidof YSF2P25` ] ; then
+      exit 0
+    fi
+    CONFIG="/storage/.config/YSF2P25.ini"
+    if [ -f $CONFIG ] ; then
+      DAEMON=$(grep ^Daemon= $CONFIG | cut -d= -f2)
+      if [ "$DAEMON" == "1" ] ; then
+        sed -e 's/Daemon=.*/Daemon=0/g' -i $CONFIG
+      fi
+      (
+        while : ; do
+          sleep 2
+          YSF2P25 $CONFIG &>/dev/null
+        done
+      ) &
+    fi
+    ;;
+  stop)
+    pkill -TERM -f YSF2P25
+    sleep 0.2
+    pkill -9 -f 'YSF2P25|ysf2p25'
+    ;;
+esac
+
+exit 0

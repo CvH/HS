@@ -1,0 +1,24 @@
+diff --git a/gdb/cli/cli-script.c b/gdb/cli/cli-script.c
+index 366c422..4b997d8 100644
+--- a/gdb/cli/cli-script.c
++++ b/gdb/cli/cli-script.c
+@@ -35,6 +35,19 @@
+ 
+ #include <vector>
+ 
++// TODO fix later
++#include <sstream>
++namespace std
++{
++   template <typename T>
++   std::string to_string(T Value)
++   {
++       std::ostringstream TempStream;
++       TempStream << Value;
++       return TempStream.str();
++   }
++}
++
+ /* Prototypes for local functions.  */
+ 
+ static enum command_control_type
