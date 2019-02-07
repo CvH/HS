@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-only
 
 PKG_NAME="mmdvmhost"
-PKG_VERSION="fe2a01e1b1"
+PKG_VERSION="c3c5fe1a5a"
 PKG_SITE="https://github.com/g4klx/MMDVMHost"
 PKG_URL="$PKG_SITE/archive/$PKG_VERSION.tar.gz"
 PKG_DEPENDS_TARGET="arduipi_oled i2c-tools"
