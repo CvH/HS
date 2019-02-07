@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-only
 
 PKG_NAME="mmdvm_cm"
-PKG_VERSION="31f63b4ea9"
+PKG_VERSION="72fef051a8"
 PKG_SITE="https://github.com/juribeparada/MMDVM_CM"
 PKG_URL="$PKG_SITE/archive/$PKG_VERSION.tar.gz"
 
