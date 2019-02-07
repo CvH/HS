@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-only
 
 PKG_NAME="p25clients"
-PKG_VERSION="4e1fdab969"
+PKG_VERSION="0ebb0bf502"
 PKG_SITE="https://github.com/g4klx/P25Clients"
 PKG_URL="$PKG_SITE/archive/$PKG_VERSION.tar.gz"
 
