@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-only
 
 PKG_NAME="dmrgateway"
-PKG_VERSION="9579565ae0"
+PKG_VERSION="82d011b6fa"
 PKG_SITE="https://github.com/g4klx/DMRGateway"
 PKG_URL="$PKG_SITE/archive/$PKG_VERSION.tar.gz"
 
